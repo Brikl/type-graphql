@@ -23,7 +23,7 @@ Create GraphQL schema and resolvers with TypeScript, using classes and decorator
 So, to create types like object type or input type, we use a kind of DTO classes.
 For example, to declare `Recipe` type we simply create a class and annotate it with decorators:
 
-```ts
+```js
 @ObjectType()
 class Recipe {
   @Field(type => ID)
@@ -53,7 +53,7 @@ type Recipe {
 
 Then we can create queries, mutations and field resolvers. For this purpose we use controller-like classes that are called "resolvers" by convention. We can also use awesome features like dependency injection and auth guards:
 
-```ts
+```js
 @Resolver(Recipe)
 class RecipeResolver {
   // dependency injection
@@ -97,7 +97,7 @@ First, we create all the GraphQL types in `schema.gql` using SDL. Then we create
 
 Only then can we actually implement the resolvers using weird generic signatures and manually performing common tasks, like validation, authorization and loading dependencies:
 
-```ts
+```js
 export const getRecipesResolver: GraphQLFieldResolver<void, Context, GetRecipesArgs> = async (
   _,
   args,
